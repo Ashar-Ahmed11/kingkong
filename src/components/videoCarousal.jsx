@@ -40,7 +40,7 @@ const VideoCarousal = ({ pageTitle, videoURL }) => {
 
 
                             <video onPlay={() => setVideoLoaded(true)} loop autoPlay muted style={{ top: 0, objectFit: 'cover', height: "100%" }} className={`card-img-top position-absolute`} src={videoURL} alt="" />
-                            <img style={{ transition: "1s all ease", top: 0, objectFit: 'cover', height: "100%", opacity: videoLoaded ? 0 : 1 }} className={`card-img-top position-absolute`} src={"https://res.cloudinary.com/dextrzp2q/image/fetch/f_webp/q_60/https://res.cloudinary.com/dextrzp2q/image/upload/v1738884168/dhghu9cke1tqwxnzbut4.png"} alt="" />
+                            {/* <img style={{ transition: "1s all ease", top: 0, objectFit: 'cover', height: "100%", opacity: videoLoaded ? 0 : 1 }} className={`card-img-top position-absolute`} src={"https://res.cloudinary.com/dextrzp2q/image/fetch/f_webp/q_60/https://res.cloudinary.com/dextrzp2q/image/upload/v1738884168/dhghu9cke1tqwxnzbut4.png"} alt="" /> */}
 
 
                         </div>
