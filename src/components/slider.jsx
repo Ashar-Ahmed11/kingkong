@@ -17,22 +17,22 @@ import MutationPlugin from './mutationPlugin'
 const Projects = ({ direction }) => {
 
   const images = [
-    { url: "https://picsum.photos/200", link: 'https://nukhba-2.web.app/' },
-    { url: "https://picsum.photos/200", link: 'https://moab-386be.web.app/' },
-    { url: "https://picsum.photos/200", link: 'https://trip-00.web.app/' },
-    { url: "https://picsum.photos/200", link: 'https://estellas-v1.web.app/' },
-    { url: "https://picsum.photos/200", link: 'https://cloudbo0k.web.app/' },
+    { url: "https://picsum.photos/id/1/1000/600", link: 'https://nukhba-2.web.app/' },
+    { url: "https://picsum.photos/id/20/1000/600", link: 'https://moab-386be.web.app/' },
+    { url: "https://picsum.photos/id/30/1000/600", link: 'https://trip-00.web.app/' },
+    { url: "https://picsum.photos/id/40/1000/600", link: 'https://estellas-v1.web.app/' },
+    { url: "https://picsum.photos/id/50/1000/600", link: 'https://cloudbo0k.web.app/' },
 
-    { url: "https://picsum.photos/200", link: 'https://www.sft.com.pk/' },
-    { url: "https://picsum.photos/200", link: 'https://vertexchain.world/' },
-    { url: "https://picsum.photos/200", link: 'https://metachatt.web.app/' }
+    { url: "https://picsum.photos/id/60/1000/600", link: 'https://www.sft.com.pk/' },
+    { url: "https://picsum.photos/id/70/1000/600", link: 'https://vertexchain.world/' },
+    { url: "https://picsum.photos/id/80/1000/600", link: 'https://metachatt.web.app/' }
     // "https://images.unsplash.com/photo-1590005176489-db2e714711fc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&h=500&w=800&q=80",
   ]
 
   const [details, setDetails] = React.useState(null)
   const [currentSlide, setCurrentSlide] = React.useState(0)
   const [loaded, setLoaded] = useState(false)
-  const animation = { duration: 50000, easing: (t) => t }
+  const animation = { duration: 100000, easing: (t) => t }
 
   const [sliderRef, instanceRef] = useKeenSlider({
     loop: true,

@@ -5,8 +5,8 @@ const Faq = () => {
     return (
         <Element name="Faq">
             <div className='py-5'>
-                <h1 className="text-center display-4 proHeading" style={{fontFamily:"Spooktackler"}}>YOU'VE GOT QUESTIONS?</h1>
-                <h1 className="text-center display-4 proHeading"  style={{fontFamily:"Spooktackler"}}>WE'VE GOT ANSWERS.</h1>
+                <h1 className="text-center display-4 proHeading" style={{fontFamily:"Spooktackler"}}>FREQUENCY ASKED QUESTIONS</h1>
+
                 <div className="container py-4">
                     <div class="accordion " id="accordionExample">
                         <div  class="accordion-item my-3 ">

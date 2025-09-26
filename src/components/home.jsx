@@ -26,7 +26,7 @@ const Home = () => {
 
     }, [ref])
 
-    const { navbarRef } = useContext(AppContext)
+
 
     // console.log(ref);
 
@@ -87,34 +87,12 @@ const Home = () => {
 
                 {/* <h1 className="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi in molestiae quaerat quae aut earum eaque non libero aperiam fugit.</h1> */}
             </div>
-            <button type="button" ref={navbarRef} class="btn btn-primary d-none" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                Launch demo modal
-            </button>
 
-            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog modal-fullscreen">
-                    <div class="modal-content upBlackShade">
-                        <div class="modal-header border-0 d-flex justify-content-end">
-                            <button type="button" style={{ backgroundColor: "#fff0", border: "none" }} data-bs-dismiss="modal">
-                                <i class="fa fa-times text-white" style={{ fontSize: '40px' }} aria-hidden="true"></i>
-
-                            </button>
-                        </div>
-                        <div class="modal-body border-0 text-center">
-                            <h1 class="display-1 fw-bold text-light">AGENCY</h1>
-                            <h1 class="display-1 fw-bold text-light">COURSES</h1>
-                            <h1 class="display-1 fw-bold text-light">GOOGLE ADS</h1>
-                            <h1 class="display-1 fw-bold text-light">FACEBOOK ADS</h1>
-                            <h1 class="display-1 fw-bold text-light">REVIEWS</h1>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
 
             <div className="container-fluid">
                 <div className="row" style={{ transform: "skewY(-11deg)", zIndex: 100, position: "relative", marginTop: window.innerWidth > 768 ? (theRef?.current?.clientHeight) : (theRef?.current?.clientHeight * 0.25) }}>
-                    <div  data-aos="fade-right" style={{ backgroundColor: "#326AF0" }} className="col-2 p-4"></div>
+                    <div data-aos="fade-right" style={{ backgroundColor: "#326AF0" }} className="col-2 p-4"></div>
                     <div className="col-2 p-4"></div>
                     <div className="col-2 p-4"></div>
                     <div className="col-2 p-4"></div>
@@ -154,6 +132,10 @@ const Home = () => {
             </div>
             <div style={{ marginTop: window.innerWidth > 768 ? (theRef?.current?.clientHeight) : (theRef?.current?.clientHeight * 0.25) }} >
                 {/* <LogoSlider direction={"left"} /> */}
+                <div className="py-5">
+                    <h1 className="text-center proHeading display-4 pb-5" style={{ fontFamily: "Spooktackler" }}>PROOF!</h1>
+                    <img src="https://kingkong.co/wp-content/uploads/2021/05/facebook-ads-more-proof-1920x5371.jpg" className='card-img-top' alt="" />
+                </div>
                 <div className="py-5">
                     <h1 className="text-center proHeading display-4 pb-5" style={{ fontFamily: "Spooktackler" }}>OUR OFFERING</h1>
                     <div className="container">
