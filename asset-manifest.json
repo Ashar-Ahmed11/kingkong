@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/kingkong/static/css/main.847c3d83.css",
-    "main.js": "/kingkong/static/js/main.8fbbed32.js",
+    "main.js": "/kingkong/static/js/main.f829365a.js",
     "static/js/453.43fe3342.chunk.js": "/kingkong/static/js/453.43fe3342.chunk.js",
     "static/media/nukhbapreview.png": "/kingkong/static/media/nukhbapreview.b81ddec154e55dd95e99.png",
     "static/media/estellaspreview.PNG": "/kingkong/static/media/estellaspreview.665ffaec35aa762da40b.PNG",
@@ -16,11 +16,11 @@
     "static/media/logo.svg": "/kingkong/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
     "index.html": "/kingkong/index.html",
     "main.847c3d83.css.map": "/kingkong/static/css/main.847c3d83.css.map",
-    "main.8fbbed32.js.map": "/kingkong/static/js/main.8fbbed32.js.map",
+    "main.f829365a.js.map": "/kingkong/static/js/main.f829365a.js.map",
     "453.43fe3342.chunk.js.map": "/kingkong/static/js/453.43fe3342.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.847c3d83.css",
-    "static/js/main.8fbbed32.js"
+    "static/js/main.f829365a.js"
   ]
 }
