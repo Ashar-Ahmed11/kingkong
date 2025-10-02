@@ -13,6 +13,43 @@ code {
     monospace;
 }
 
+.effect-bg{
+    aspect-ratio: 1/2.2;
+    background-image: linear-gradient(#a13355,#5159d9);
+    border-radius: 800%;
+    filter: blur(128px);
+    left: 50%;
+    max-width: 400px;
+    opacity: .45;
+    position: absolute;
+    top: 55%;
+    transform: translate(-50%,-50%);
+    width: 80%;
+    z-index: -1
+}
+
+.bg-container{
+  z-index: 20;
+  position: relative;
+}
+
+@media ((min-width: 768px)) {
+    .effect-bg{
+        transform:translate(-50%,-50%) rotate(10deg)
+    }
+}
+
+@media ((min-width: 1024px)) {
+    .effect-bg{
+        transform:translate(-50%,-50%) rotate(20deg)
+    }
+}
+
+@media ((min-width: 1536px)) {
+    .effect-bg{
+        transform: translate(-50%, -50%) rotate( 32deg);
+    }
+}
 
 .shade {
   position: absolute;

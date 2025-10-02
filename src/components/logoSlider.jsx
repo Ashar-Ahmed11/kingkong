@@ -26,6 +26,18 @@ const LogoSlider = ({direction}) => {
     { url: "https://logos-world.net/wp-content/uploads/2023/02/Standard-Chartered-Logo-500x281.png", link: 'https://www.sft.com.pk/' },
     { url: "https://logos-world.net/wp-content/uploads/2020/08/George-Mason-Patriots-Logo-500x281.png", link: 'https://vertexchain.world/' },
     { url: "https://logos-world.net/wp-content/uploads/2020/05/Zara-Logo-700x394.png", link: 'https://metachatt.web.app/' }
+,
+    { url: "https://logos-world.net/wp-content/uploads/2021/08/Forbes-Logo-700x394.png", link: 'https://nukhba-2.web.app/' },
+    { url: "https://logos-world.net/wp-content/uploads/2022/02/CNBC-Logo-500x281.png", link: 'https://moab-386be.web.app/' },
+    { url:"https://logos-world.net/wp-content/uploads/2020/10/Yahoo-Logo-700x394.png", link: 'https://trip-00.web.app/' },
+    { url: "https://logos-world.net/wp-content/uploads/2020/11/Fox-News-Channel-Logo-700x394.png", link: 'https://estellas-v1.web.app/' },
+    { url: "https://logos-world.net/wp-content/uploads/2022/01/USA-Today-Logo-700x394.png", link: 'https://cloudbo0k.web.app/' },
+  
+    { url: "https://logos-world.net/wp-content/uploads/2023/02/Standard-Chartered-Logo-500x281.png", link: 'https://www.sft.com.pk/' },
+    { url: "https://logos-world.net/wp-content/uploads/2020/08/George-Mason-Patriots-Logo-500x281.png", link: 'https://vertexchain.world/' },
+    { url: "https://logos-world.net/wp-content/uploads/2020/05/Zara-Logo-700x394.png", link: 'https://metachatt.web.app/' }
+
+
     // "https://images.unsplash.com/photo-1590005176489-db2e714711fc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&h=500&w=800&q=80",
   ]
 
@@ -53,7 +65,7 @@ const LogoSlider = ({direction}) => {
     
     slides: {
       origin: 'center',
-      perView: window.innerWidth < 750 ? 3 : 6,
+      perView: window.innerWidth < 750 ? 3 : 12,
 spacing:10
 
     },
@@ -113,12 +125,13 @@ spacing:10
                         </div>
                     </div>
                 </div> */}
-        <div ref={sliderRef} className="keen-slider">
+        <div  style={{zIndex:20}} ref={sliderRef} className="keen-slider">
           {images.map((src, idx) => (
             <a href={src.link} target='_blank' key={idx} style={{ height: containerHeight ? containerHeight : 'auto' }} className="keen-slider__slide zoom-out__slide">
               <div>
                 {/* https://res.cloudinary.com/dextrzp2q/image/fetch/f_webp/q_60/https://metatech-official.co/${src.url} */}
-                <img className='card-img-top rounded-4 ' style={{objectFit:"contain",height:"100%"}} alt="An interactive image for the preview of our one of the most recent portfolio website." onLoad={(e) => console.log(e.target.clientHeight)} src={`https://res.cloudinary.com/dextrzp2q/image/fetch/f_webp/q_60/${src.url}`} />
+                
+                <img className='card-img-top rounded-4 bg-white p-2' style={{objectFit:"contain",height:"100%"}} alt="An interactive image for the preview of our one of the most recent portfolio website." onLoad={(e) => console.log(e.target.clientHeight)} src={`https://res.cloudinary.com/dextrzp2q/image/fetch/f_webp/q_60/${src.url}`} />
               </div>
             </a>
           ))}

@@ -1,8 +1,10 @@
 import React from 'react'
 
 const AgencyCard = () => {
+    const bgColor = "black"
+    const textColor = "white"
     return (
-        <div className="card shadow rounded-4 my-2"  data-aos="fade-right">
+        <div className="card shadow rounded-4 my-2"  data-aos="fade-right"  style={{ backgroundColor: `rgba(0, 0, 0, 0.7)`,backdropFilter:'blur(7px)', color: "white" }} >
             <div className='w-100 d-flex justify-content-center py-4'>
                 <i class="fa fa-home proHeading" style={{ fontSize: 150 }} aria-hidden="true"></i>
 
