@@ -45,41 +45,100 @@ const VideoCarousal = ({ pageTitle, videoURL1, videoURL2 }) => {
 
                         </div>
 
-                        <div style={{ top: '0px', bottom: '0px', right: '0px', left: '0px', zIndex: '30' }} class="carousel-caption h-100 w-100 justify-content-center d-flex align-items-center flex-column">
+                  <div
+  style={{ top: '0', bottom: '0', right: '0', left: '0', zIndex: 30 }}
+  className="carousel-caption h-100 w-100 d-flex flex-column justify-content-center align-items-center text-center"
+>
+  <h1 className="display-1 h1 m-0 proHeading" style={{ fontFamily: "Spooktackler" }}>
+    {pageTitle}
+  </h1>
+  <span className="fw-normal h5 mb-4">
+    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Unde, natus.
+  </span>
 
-                            <h1 className='display-1 h1 p-0 m-0 proHeading' style={{ fontFamily: "Spooktackler" }} >{pageTitle}</h1>
-                            <span className=' fw-normal p-0 h5'  >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Unde, natus.</span>
-                            {/* <span className=' fw-normal p-0 h5'  >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Unde, natus.</span> */}
-                             <div className="mb-4 w-50 mb-5 pb-4">
-              <div className="position-relative  rounded-pill p-1 shadow-lg">
-                <div className="input-group">
-                  <input
-                    type="email"
-                    className="form-control border-0 rounded-pill ps-4 pe-5 py-3"
-                    placeholder="Enter your email..."
-                    // value={email}
-                    // onChange={(e) => setEmail(e.target.value)}
-                    style={{ paddingRight: '140px' }}
-                  />
-                  <button
-                    type="button"
-                    // onClick={handleSubmit}
-                    className="btn btn-warning position-absolute end-0 top-50 translate-middle-y me-2 rounded-pill fw-bold px-4 py-2"
-                    style={{ backgroundColor: '#c8ff00', border: 'none', zIndex: 10 }}
-                  >
-                    Doit <span className="ms-1">→</span>
-                  </button>
-                </div>
-                </div>
-              </div>
+  {/* Email input + Button (Responsive) */}
+<div
+  className="mb-3 w-100 text-center"
+  style={{
+    position: "relative",
+    zIndex: 9999, // ✅ sits above the ribbons
+  }}
+>
+  <div
+    className="position-relative rounded-pill p-1 shadow-lg mx-auto d-block d-md-none"
+    style={{
+      width: "90%",
+      maxWidth: "350px",
+      position: "relative",
+      zIndex: 9999,
+    }}
+  >
+    <div className="input-group">
+      <input
+        type="email"
+        className="form-control border-0 rounded-pill ps-4 pe-5 py-3"
+        placeholder="Enter your email..."
+      />
+      <button
+        type="button"
+        className="btn btn-warning position-absolute end-0 top-50 translate-middle-y me-2 rounded-pill fw-bold px-4 py-2 arrow-btn"
+        style={{
+          backgroundColor: "#c8ff00",
+          border: "none",
+          zIndex: 10000,
+        }}
+      >
+        Doit <span className="ms-1 arrow-anim" style={{ fontSize: "18px" }}>→</span>
+      </button>
+    </div>
+  </div>
 
-                            <div className="d-flex">
-                                {/* {images[counter].iconTwo&&<h1 className='display-1 mx-2' ><i class={`fa-brands ${images[counter].iconTwo} fa-2xl`}></i></h1>} */}
 
-                                {/* <h1 className='display-1 mx-2' ><i class={`${images[counter].icon=='fa-android'?'fa-brands':'fa-solid'} ${images[counter].icon} fa-2xl`}></i></h1> */}
-                            </div>
-                            {/* <p  style={{fontFamily:"Barranco"}}  className='display-5 pt-5'>{images[counter].offer}</p> */}
-                        </div>
+
+  
+
+    {/* ✅ Desktop View */}
+    <div className="position-relative rounded-pill p-1 shadow-lg mx-auto d-none d-md-block" style={{ width: "50%", maxWidth: "600px" }}>
+      <div className="input-group">
+        <input
+          type="email"
+          className="form-control border-0 rounded-pill ps-4 pe-5 py-3"
+          placeholder="Enter your email..."
+        />
+        <button
+          type="button"
+          className="btn btn-warning position-absolute end-0 top-50 translate-middle-y me-2 rounded-pill fw-bold px-4 py-2 arrow-btn"
+          style={{ backgroundColor: '#c8ff00', border: 'none', zIndex: 10 }}
+        >
+          Doit <span className="ms-1 arrow-anim" style={{ fontSize: "20px" }}>→</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+
+  {/* Arrow animation + hover effect */}
+  <style>{`
+    @keyframes arrowSlide {
+      0% { opacity: 0; transform: translateX(-10px); }
+      10% { opacity: 1; transform: translateX(0); }
+      80% { opacity: 1; transform: translateX(12px); }
+      100% { opacity: 0; transform: translateX(25px); }
+    }
+
+    .arrow-anim {
+      display: inline-block;
+      animation: arrowSlide 1.5s linear infinite;
+    }
+
+    .arrow-btn:hover {
+      filter: brightness(1.05);
+      transform: scale(1.02);
+      transition: all 0.2s ease;
+    }
+  `}</style>
+</div>
+
                     </div>
                    
                 </div>

@@ -73,7 +73,7 @@ const Home = () => {
 
 
         <div className="container-fluid" style={{ marginTop: -theRef?.current?.clientHeight, }} ref={ref}>
-          <div className="row" style={{ transform: "skewY(-11deg)", zIndex: 100, position: "relative" }}>
+          <div className="row" style={{ transform: "skewY(-11deg)", zIndex: 1, position: "relative" }}>
             <div data-aos="fade-right" style={{ backgroundColor: "#326AF0" }} className="col-2 p-4"></div>
             <div className="col-2 p-4"></div>
             <div className="col-2 p-4"></div>
