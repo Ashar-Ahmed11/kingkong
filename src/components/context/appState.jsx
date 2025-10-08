@@ -26,7 +26,7 @@ const AppState = (props) => {
     console.log("Auth Token:", data.authToken);
 
     // Store token in localStorage/sessionStorage if needed
-    // localStorage.setItem("authToken", data.authToken);
+    localStorage.setItem("authToken", data.authToken);
 
     return data;
   } catch (err) {

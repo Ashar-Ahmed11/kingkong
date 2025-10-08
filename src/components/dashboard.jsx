@@ -23,13 +23,16 @@ const Dashboard = () => {
 
     const history = useHistory()
 
-
-    // if (!authToken) {
-    //     history.push('/sign-in')
-    // }
-   
-
-
+const authToken = localStorage.getItem("authToken")
+    if (!authToken) {
+        history.push('/admin')
+    }
+    
+    
+    const handleLogout = async ()=>{
+        localStorage.removeItem("authToken")
+        history.push('/admin')
+}
 
     return (
         <div>
@@ -124,8 +127,8 @@ const Dashboard = () => {
                                 <ul className="dropdown-menu dropdown-menu-dark text-small shadow">
 
                                     <li>
-                                        <a className="dropdown-item" href="#">
-                                            {/* <ConnectKitButton showAvatar={false} /> */}
+                                        <a className="dropdown-item" href="#" onClick={handleLogout}>
+                                           logout
 
                                         </a>
                                     </li>
