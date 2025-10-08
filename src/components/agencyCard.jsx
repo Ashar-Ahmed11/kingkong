@@ -1,17 +1,17 @@
 import React from 'react'
 
-const AgencyCard = () => {
+const AgencyCard = ({title,icon}) => {
     const bgColor = "black"
     const textColor = "white"
     return (
         <div className="card shadow rounded-4 my-2"  data-aos="fade-right"  style={{ backgroundColor: `rgba(0, 0, 0, 0.7)`,backdropFilter:'blur(7px)', color: "white" }} >
             <div className='w-100 d-flex justify-content-center py-4'>
-                <i class="fa fa-home proHeading" style={{ fontSize: 150 }} aria-hidden="true"></i>
+                <i class={`fa ${icon} proHeading`} style={{ fontSize: 150 }} aria-hidden="true"></i>
 
             </div>
             <div className="card-body text-center">
                 <span>Lorem ipsum, dolor sit amet consectetur adipisicing elit. A, libero!</span>
-                <h1 className='display-2 proHeading' style={{ fontFamily: "Spooktackler" }}>AGENCY</h1>
+                <h1 className='display-2 proHeading' style={{ fontFamily: "Spooktackler" }}>{title}</h1>
                 <p>
                     Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit, explicabo.
                     Accusantium, sapiente rem amet voluptatum iste sed. Voluptas ullam porro,

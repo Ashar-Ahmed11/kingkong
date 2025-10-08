@@ -5,11 +5,14 @@ import Faq from "./faq";
 import Prices from "./prices";
 import "../darkTheme.css";
 import { useEffect } from "react";
+import Testimonials from "./testimonials.jsx";
+import FullScreenLoader from "./fullScreenLoader.jsx";
 
 const Agency = () => {
   const { getAgencyPage } = useContext(AppContext);
   const [isLoading, setIsLoading] = useState(true);
   const [getAgency, setGetAgency] = useState(null);
+
   const [form, setForm] = useState({
     droneShots: [],
     colorGrades: [],
@@ -70,6 +73,9 @@ const Agency = () => {
 
   const bgColor = "rgb(14 9 24/var(--tw-bg-opacity,1))";
   const textColor = "white";
+  if (isLoading) {
+    return <FullScreenLoader />; // ✅ show loader or placeholder component
+  }
   return (
     <div style={{ backgroundColor: bgColor }} className=" pb-4 agency-dark">
       <h1 className="text-center proHeading display-4 py-4">
@@ -81,28 +87,28 @@ const Agency = () => {
         <div className="effect-bg" style={{ zIndex: 10 }}></div>
         <div className="row bg-container">
           {getAgency?.droneShots?.map((imgSrc, i) => (
-            <div data-aos="fade-up" className="col-md-2 col-6" key={i}>
+            <div data-aos="fade-up" className="col-md-2 py-2 col-6" key={i}>
               <img
                 src={imgSrc}
                 alt=""
-                className="py-2 rounded-5 card-img-top"
+                className="border-0 rounded-5 card-img-top"
               />
             </div>
           ))}
           {/* <div data-aos="fade-up" className="col-md-2 col-6">
-      <img src="https://picsum.photos/id/15/600/1000" alt="" className="py-2 rounded-5 card-img-top" />
+      <img src="https://picsum.photos/id/15/600/1000" alt="" className="border-0 rounded-5 card-img-top" />
     </div>
     <div data-aos="fade-up" className="col-md-2 col-6">
-      <img src="https://picsum.photos/id/18/600/1000" alt="" className="py-2 rounded-5 card-img-top" />
+      <img src="https://picsum.photos/id/18/600/1000" alt="" className="border-0 rounded-5 card-img-top" />
     </div>
     <div data-aos="fade-up" className="col-md-2 col-6">
-      <img src="https://picsum.photos/id/19/600/1000" alt="" className="py-2 rounded-5 card-img-top" />
+      <img src="https://picsum.photos/id/19/600/1000" alt="" className="border-0 rounded-5 card-img-top" />
     </div>
     <div data-aos="fade-up" className="col-md-2 col-6">
-      <img src="https://picsum.photos/id/20/600/1000" alt="" className="py-2 rounded-5 card-img-top" />
+      <img src="https://picsum.photos/id/20/600/1000" alt="" className="border-0 rounded-5 card-img-top" />
     </div>
     <div data-aos="fade-up" className="col-md-2 col-6">
-      <img src="https://picsum.photos/id/21/600/1000" alt="" className="py-2 rounded-5 card-img-top" />
+      <img src="https://picsum.photos/id/21/600/1000" alt="" className="border-0 rounded-5 card-img-top" />
     </div> */}
         </div>
       </div>
@@ -116,28 +122,28 @@ const Agency = () => {
       <div className="container">
         <div className="row">
           {getAgency?.colorGrades?.map((imgSrc, i) => (
-            <div data-aos="fade-up" className="col-md-2 col-6" key={i}>
+            <div data-aos="fade-up" className="col-md-2 py-2 col-6" key={i}>
               <img
                 src={imgSrc}
                 alt=""
-                className="py-2 rounded-5 card-img-top"
+                className="border-0 rounded-5 card-img-top"
               />
             </div>
           ))}
           {/* <div data-aos="fade-up" className="col-md-2 col-6">
-      <img src="https://picsum.photos/id/15/600/1000" alt="" className="py-2 rounded-5 card-img-top" />
+      <img src="https://picsum.photos/id/15/600/1000" alt="" className="border-0 rounded-5 card-img-top" />
     </div>
     <div data-aos="fade-up" className="col-md-2 col-6">
-      <img src="https://picsum.photos/id/18/600/1000" alt="" className="py-2 rounded-5 card-img-top" />
+      <img src="https://picsum.photos/id/18/600/1000" alt="" className="border-0 rounded-5 card-img-top" />
     </div>
     <div data-aos="fade-up" className="col-md-2 col-6">
-      <img src="https://picsum.photos/id/19/600/1000" alt="" className="py-2 rounded-5 card-img-top" />
+      <img src="https://picsum.photos/id/19/600/1000" alt="" className="border-0 rounded-5 card-img-top" />
     </div>
     <div data-aos="fade-up" className="col-md-2 col-6">
-      <img src="https://picsum.photos/id/20/600/1000" alt="" className="py-2 rounded-5 card-img-top" />
+      <img src="https://picsum.photos/id/20/600/1000" alt="" className="border-0 rounded-5 card-img-top" />
     </div>
     <div data-aos="fade-up" className="col-md-2 col-6">
-      <img src="https://picsum.photos/id/21/600/1000" alt="" className="py-2 rounded-5 card-img-top" />
+      <img src="https://picsum.photos/id/21/600/1000" alt="" className="border-0 rounded-5 card-img-top" />
     </div> */}
         </div>
       </div>
@@ -152,28 +158,28 @@ const Agency = () => {
         <div className="effect-bg" style={{ zIndex: 10 }}></div>
         <div className="row bg-container">
           {getAgency?.colorGrades?.map((imgSrc, i) => (
-            <div data-aos="fade-up" key={i} className="col-md-2 col-6">
+            <div data-aos="fade-up" key={i} className="col-md-2 col-6 py-2">
               <img
                 src={imgSrc}
                 alt=""
-                className="py-2 rounded-5 card-img-top"
+                className="border-0 rounded-5 card-img-top"
               />
             </div>
           ))}
           {/* <div data-aos="fade-up" className="col-md-2 col-6">
-      <img src="https://picsum.photos/id/15/600/1000" alt="" className="py-2 rounded-5 card-img-top" />
+      <img src="https://picsum.photos/id/15/600/1000" alt="" className="border-0 rounded-5 card-img-top" />
     </div>
     <div data-aos="fade-up" className="col-md-2 col-6">
-      <img src="https://picsum.photos/id/18/600/1000" alt="" className="py-2 rounded-5 card-img-top" />
+      <img src="https://picsum.photos/id/18/600/1000" alt="" className="border-0 rounded-5 card-img-top" />
     </div>
     <div data-aos="fade-up" className="col-md-2 col-6">
-      <img src="https://picsum.photos/id/19/600/1000" alt="" className="py-2 rounded-5 card-img-top" />
+      <img src="https://picsum.photos/id/19/600/1000" alt="" className="border-0 rounded-5 card-img-top" />
     </div>
     <div data-aos="fade-up" className="col-md-2 col-6">
-      <img src="https://picsum.photos/id/20/600/1000" alt="" className="py-2 rounded-5 card-img-top" />
+      <img src="https://picsum.photos/id/20/600/1000" alt="" className="border-0 rounded-5 card-img-top" />
     </div>
     <div data-aos="fade-up" className="col-md-2 col-6">
-      <img src="https://picsum.photos/id/21/600/1000" alt="" className="py-2 rounded-5 card-img-top" />
+      <img src="https://picsum.photos/id/21/600/1000" alt="" className="border-0 rounded-5 card-img-top" />
     </div> */}
         </div>
       </div>
@@ -187,11 +193,11 @@ const Agency = () => {
       <div className="container">
         {getAgency?.longFormEdits?.length >= 2 && (
           <div className="row">
-            <div data-aos="fade-up" className="col-md-5 col-12">
+            <div data-aos="fade-up" className="col-md-5 col-12 py-2">
               <img
                 src={getAgency.longFormEdits[0]}
                 alt="Before icons"
-                className="py-2 rounded-5 card-img-top"
+                className="border-0 rounded-5 card-img-top"
               />
             </div>
 
@@ -212,11 +218,11 @@ const Agency = () => {
               </div>
             </div>
 
-            <div data-aos="fade-up" className="col-md-5 col-12">
+            <div data-aos="fade-up" className="col-md-5 col-12 py-2">
               <img
                 src={getAgency.longFormEdits[1]}
                 alt="After icons"
-                className="py-2 rounded-5 card-img-top"
+                className="border-0 rounded-5 card-img-top"
               />
             </div>
           </div>
@@ -228,7 +234,7 @@ const Agency = () => {
                 
                {getAgency?.longFormEdits?.length >= 2 && ( <div className="row bg-container">
                     <div data-aos="fade-up" className="col-md-5 col-12">
-                        <img src="https://picsum.photos/id/13/1000/600" alt="" className="py-2 rounded-5 card-img-top" />
+                        <img src="https://picsum.photos/id/13/1000/600" alt="" className="border-0 rounded-5 card-img-top" />
                     </div>
                     <div data-aos="fade-up" className="col-md-2 col-12 d-md-block">
                         <div className="d-flex justify-content-center align-items-center h-100 py-2">
@@ -239,7 +245,7 @@ const Agency = () => {
                         </div>
                     </div>
                     <div data-aos="fade-up" className="col-md-5 col-12">
-                        <img src="https://picsum.photos/id/12/1000/600" alt="" className="py-2 rounded-5 card-img-top" />
+                        <img src="https://picsum.photos/id/12/1000/600" alt="" className="border-0 rounded-5 card-img-top" />
                     </div>
                 </div>)}
             </div>
@@ -247,7 +253,7 @@ const Agency = () => {
             <div className="container">
                 <div className="row">
                     <div data-aos="fade-up" className="col-md-5 col-12">
-                        <img src="https://picsum.photos/id/13/1000/600" alt="" className="py-2 rounded-5 card-img-top" />
+                        <img src="https://picsum.photos/id/13/1000/600" alt="" className="border-0 rounded-5 card-img-top" />
                     </div>
                     <div data-aos="fade-up" className="col-md-2 col-12 d-md-block">
                         <div className="d-flex justify-content-center align-items-center h-100 py-2">
@@ -258,7 +264,7 @@ const Agency = () => {
                         </div>
                     </div>
                     <div data-aos="fade-up" className="col-md-5 col-12">
-                        <img src="https://picsum.photos/id/12/1000/600" alt="" className="py-2 rounded-5 card-img-top" />
+                        <img src="https://picsum.photos/id/12/1000/600" alt="" className="border-0 rounded-5 card-img-top" />
                     </div>
                 </div>
             </div> */}
@@ -272,11 +278,11 @@ const Agency = () => {
         <div className="effect-bg" style={{ zIndex: 10 }}></div>
         {getAgency?.motionGraphics?.length >= 2 && (
           <div className="row bg-container">
-            <div data-aos="fade-up" className="col-md-5 col-12">
+            <div data-aos="fade-up" className="col-md-5 col-12 py-2">
               <img
                 src={getAgency.motionGraphics[0]}
                 alt=""
-                className="py-2 rounded-5 card-img-top"
+                className="border-0 rounded-5 card-img-top"
               />
             </div>
             <div data-aos="fade-up" className="col-md-2 col-12 d-md-block">
@@ -286,11 +292,11 @@ const Agency = () => {
                 <i class="fa fa-usd  fa-5x proHeading" aria-hidden="true"></i>
               </div>
             </div>
-            <div data-aos="fade-up" className="col-md-5 col-12">
+            <div data-aos="fade-up" className="col-md-5 col-12 py-2">
               <img
                 src={getAgency.motionGraphics[1]}
                 alt=""
-                className="py-2 rounded-5 card-img-top"
+                className="border-0 rounded-5 card-img-top"
               />
             </div>
           </div>
@@ -325,15 +331,16 @@ const Agency = () => {
 
         <div className="bg-container">
           {" "}
-         { getAgency?.proveSection.map((prove, idx)=>(<div className="row py-2">
+          {getAgency?.proveSection.map((prove, idx) => (<div className="row py-2">
             {" "}
-            <div className="col-12 col-md-8 d-flex justify-content-center  order-2 order-md-1 py-2">
+            <div className="col-12 col-md-8 d-flex justify-content-center align-items-center order-2 order-md-1 py-2">
               {" "}
               <img
                 // src="https://marketingartfully.com/wp-content/uploads/2022/01/2021-youtube-stats-1024x583.jpg"
                 src={prove.stats}
                 alt=""
-                className="card-img-top w-75 rounded-4"
+                // style={{objectFit:"cover"}}
+                className="card-img-top w-75 rounded-4 border-0 "
               />{" "}
             </div>{" "}
             <div className="col-12 col-md-4 order-1 order-md-2 justify-content-md-start justify-content-center d-flex align-items-center">
@@ -343,7 +350,8 @@ const Agency = () => {
                 <img
                   src={prove.youtuberImg}
                   alt=""
-                  className="card-img-top w-100 rounded-5 rounded-circle"
+                  style={{ height: "150px", width: "150px", borderRadius: "100%", objectFit: "cover" }}
+                  className="card-img-top  "
                 />{" "}
               </div>{" "}
               <div className="w-50 d-none d-md-block">
@@ -351,7 +359,9 @@ const Agency = () => {
                 <img
                   src={prove.youtuberImg}
                   alt=""
-                  className="card-img-top w-100 rounded-5 rounded-circle"
+                  style={{ height: "150px", width: "150px", borderRadius: "100%", objectFit: "cover" }}
+
+                  className="card-img-top  "
                 />{" "}
               </div>{" "}
             </div>{" "}
@@ -365,70 +375,8 @@ const Agency = () => {
           <Faq />
         </div>
       </div>
-      <div className="container d-flex justify-content-center">
-        <div className="row">
-          <div data-aos="fade-up" className="col-md-2 col-4">
-            <div className="d-flex justify-content-center flex-column">
-              <img
-                src="https://wac-cdn.atlassian.com/dam/jcr:ba03a215-2f45-40f5-8540-b2015223c918/Max-R_Headshot%20(1).jpg?cdnVersion=2994"
-                style={{ borderRadius: "100%", width: "100px" }}
-                alt=""
-              />
-              <p className="fw-bold">Adam Jac</p>
-            </div>
-          </div>
-          <div data-aos="fade-up" className="col-md-2 col-4">
-            <div className="d-flex justify-content-center flex-column">
-              <img
-                src="https://wac-cdn.atlassian.com/dam/jcr:ba03a215-2f45-40f5-8540-b2015223c918/Max-R_Headshot%20(1).jpg?cdnVersion=2994"
-                style={{ borderRadius: "100%", width: "100px" }}
-                alt=""
-              />
-              <p className="fw-bold">Adam Jac</p>
-            </div>
-          </div>
-          <div data-aos="fade-up" className="col-md-2 col-4">
-            <div className="d-flex justify-content-center flex-column">
-              <img
-                src="https://wac-cdn.atlassian.com/dam/jcr:ba03a215-2f45-40f5-8540-b2015223c918/Max-R_Headshot%20(1).jpg?cdnVersion=2994"
-                style={{ borderRadius: "100%", width: "100px" }}
-                alt=""
-              />
-              <p className="fw-bold">Adam Jac</p>
-            </div>
-          </div>
-          <div data-aos="fade-up" className="col-md-2 col-4">
-            <div className="d-flex justify-content-center flex-column">
-              <img
-                src="https://wac-cdn.atlassian.com/dam/jcr:ba03a215-2f45-40f5-8540-b2015223c918/Max-R_Headshot%20(1).jpg?cdnVersion=2994"
-                style={{ borderRadius: "100%", width: "100px" }}
-                alt=""
-              />
-              <p className="fw-bold">Adam Jac</p>
-            </div>
-          </div>
-          <div data-aos="fade-up" className="col-md-2 col-4">
-            <div className="d-flex justify-content-center flex-column">
-              <img
-                src="https://wac-cdn.atlassian.com/dam/jcr:ba03a215-2f45-40f5-8540-b2015223c918/Max-R_Headshot%20(1).jpg?cdnVersion=2994"
-                style={{ borderRadius: "100%", width: "100px" }}
-                alt=""
-              />
-              <p className="fw-bold">Adam Jac</p>
-            </div>
-          </div>
-          <div data-aos="fade-up" className="col-md-2 col-4">
-            <div className="d-flex justify-content-center flex-column">
-              <img
-                src="https://wac-cdn.atlassian.com/dam/jcr:ba03a215-2f45-40f5-8540-b2015223c918/Max-R_Headshot%20(1).jpg?cdnVersion=2994"
-                style={{ borderRadius: "100%", width: "100px" }}
-                alt=""
-              />
-              <p className="fw-bold">Adam Jac</p>
-            </div>
-          </div>
-        </div>
-      </div>
+
+      <Testimonials />
       <div className="d-flex justify-content-center">
         <button className="btn btn-outline-primary rounded-4 fw-bold">
           Contact Us

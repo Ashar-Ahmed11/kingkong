@@ -243,10 +243,10 @@ const Home = () => {
             <div className="container position-relative" style={{ zIndex: 200 }}>
               <div className="row">
                 <div className="col-md-6 col-12" style={{ backgroundColor: "transparent" }}>
-                  <AgencyCard />
+                  <AgencyCard icon={"fa-home"} title={"AGNECY"}/>
                 </div>
                 <div className="col-md-6 col-12" style={{ backgroundColor: "transparent" }}>
-                  <AgencyCard />
+                  <AgencyCard icon={"fa-book"}  title={"COURSES"}/>
                 </div>
               </div>
             </div>

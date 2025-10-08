@@ -20,7 +20,7 @@ code {
     filter: blur(128px);
     left: 50%;
     max-width: 400px;
-    opacity: .45;
+    opacity: .85;
     position: absolute;
     top: 55%;
     transform: translate(-50%,-50%);
@@ -116,6 +116,8 @@ background: linear-gradient(180deg, rgba(0, 0, 0, 0.3) 1%, rgba(0, 0, 0, 0.7) 50
   background: var(--pink-G, linear-gradient(106deg, #F100FF 39.77%, #0144F8 88.04%));
   background-clip: text;
   -webkit-background-clip: text;
+  z-index: 20;
+  position: relative;
   -webkit-text-fill-color: transparent;
 }
 

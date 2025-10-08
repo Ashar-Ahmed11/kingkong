@@ -12,7 +12,7 @@ const AppState = (props) => {
 
     const loggedIn = async (username, password)=> {
   try {
-    const response = await fetch("http://localhost:8000/api/auth/login", {
+    const response = await fetch("https://superkingex-dot-arched-gear-433017-u9.de.r.appspot.com/api/auth/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -42,7 +42,7 @@ const AppState = (props) => {
 // ✅ Get Basic Settings
  const getBasicSettings = async () => {
   try {
-    const res = await fetch(`http://localhost:8000/api/basicsettings/get-basicsettings`);
+    const res = await fetch(`https://superkingex-dot-arched-gear-433017-u9.de.r.appspot.com/api/basicsettings/get-basicsettings`);
     if (!res.ok) throw new Error("Failed to fetch settings");
     return await res.json();
   } catch (err) {
@@ -54,7 +54,7 @@ const AppState = (props) => {
 // ✅ Create Basic Settings
  const createBasicSettings = async (data) => {
   try {
-    const res = await fetch(`http://localhost:8000/api/basicsettings/create`, {
+    const res = await fetch(`https://superkingex-dot-arched-gear-433017-u9.de.r.appspot.com/api/basicsettings/create`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -72,7 +72,7 @@ const AppState = (props) => {
 // ✅ Update Basic Settings by ID
 const updateBasicSettings = async (id, data) => {
   try {
-    const res = await fetch(`http://localhost:8000/api/basicsettings/update/${id}`, {
+    const res = await fetch(`https://superkingex-dot-arched-gear-433017-u9.de.r.appspot.com/api/basicsettings/update/${id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -93,7 +93,7 @@ const updateBasicSettings = async (id, data) => {
   // Fetch Homepage
   const getHomepage = async () => {
     try {
-      const res = await fetch("http://localhost:8000/api/homepage/get-home-page");
+      const res = await fetch("https://superkingex-dot-arched-gear-433017-u9.de.r.appspot.com/api/homepage/get-home-page");
       const data = await res.json();
       sethomePage(data)
       return data.length > 0 ? data[0] : null;
@@ -106,7 +106,7 @@ const updateBasicSettings = async (id, data) => {
   // Update Homepage
   const updateHomepage = async (id, updatedData) => {
     try {
-      const res = await fetch(`http://localhost:8000/api/homepage/update-homepage/${id}`, {
+      const res = await fetch(`https://superkingex-dot-arched-gear-433017-u9.de.r.appspot.com/api/homepage/update-homepage/${id}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(updatedData),
@@ -126,7 +126,7 @@ const updateBasicSettings = async (id, data) => {
 // // Create new Agency Page
 //  const createAgencyPage = async (formData) => {
 //   try {
-//     const res = await fetch("http://localhost:8000/api/agency", {
+//     const res = await fetch("https://superkingex-dot-arched-gear-433017-u9.de.r.appspot.com/api/agency", {
 //       method: "POST",
 //       headers: { "Content-Type": "application/json" },
 //       body: JSON.stringify(formData),
@@ -142,7 +142,7 @@ const updateBasicSettings = async (id, data) => {
 // Get Agency Page
  const getAgencyPage = async () => {
   try {
-    const res = await fetch("http://localhost:8000/api/agencypage/get-agency");
+    const res = await fetch("https://superkingex-dot-arched-gear-433017-u9.de.r.appspot.com/api/agencypage/get-agency");
     if (!res.ok) throw new Error("Failed to fetch agency page");
     const data =  await res.json();
     setAgencyPage(data)
@@ -156,7 +156,7 @@ const updateBasicSettings = async (id, data) => {
 // Update Agency Page
  const updateAgencyPage = async (id, formData) => {
   try {
-    const res = await fetch(`http://localhost:8000/api/agencypage/update/${id}`, {
+    const res = await fetch(`https://superkingex-dot-arched-gear-433017-u9.de.r.appspot.com/api/agencypage/update/${id}`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(formData),
@@ -171,7 +171,7 @@ const updateBasicSettings = async (id, data) => {
 
  const fetchSettings = async () => {
       try {
-        const res = await fetch("http://localhost:8000/api/basicsettings/get-basicsettings"); // ✅ use your backend URL
+        const res = await fetch("https://superkingex-dot-arched-gear-433017-u9.de.r.appspot.com/api/basicsettings/get-basicsettings"); // ✅ use your backend URL
         if (!res.ok) throw new Error("Failed to fetch settings");
         const data = await res.json();
         return data
