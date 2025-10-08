@@ -1,7 +1,6 @@
 {
   "name": "reactjs-custom-workflow",
-    "homepage": "https://ashar-ahmed11.github.io/kingkong",
-
+  "homepage": "https://ashar-ahmed11.github.io/kingkong",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -12,9 +11,11 @@
     "keen-slider": "^6.8.5",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
+    "react-helmet": "^6.1.0",
     "react-router-dom": "^5.3.4",
     "react-scripts": "5.0.1",
     "react-scroll": "^1.9.3",
+    "react-toastify": "^11.0.5",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

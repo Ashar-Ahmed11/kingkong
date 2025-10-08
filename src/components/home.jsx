@@ -18,25 +18,58 @@ import VideoSlider from './videoSlider.jsx'
 import EndingCarousal from './endingCarousal.jsx'
 import BrandExperience from './brandExperience.jsx'
 import AppContext from './context/appContext.jsx'
+import Helmet from './Helmet.jsx'
 import '../home.css'
+import FullScreenLoader from './fullScreenLoader.jsx'
 
 const Home = () => {
   const ref = useRef()
+  const { getHomepage,fetchSettings } = useContext(AppContext);
   const [theRef, setTheRef] = useState(null)
+  const [getHome, setGetHome] = useState(null)
+  const [basicSettings, setBasicSettings] = useState(null)
+  const [loading, setLoading] = useState(false)
+ useEffect(() => {
+  
+    const func = async ()=>{
+      setLoading(true)
+      const data = await fetchSettings();
+      console.log("basics",data)
+      setBasicSettings(data)
+      setLoading(false)
+    }
+    func()
+  }, [])
+
+
   useEffect(() => {
     setTheRef(ref);
 
   }, [ref])
   // background: #0144F8;background: linear-gradient(90deg,rgba(1, 68, 248, 1) 0%, rgba(241, 0, 255, 1) 50%, rgba(255, 255, 255, 1) 100%);
 
+  useEffect(() => {
+    const func = async ()=>{
+   const data = await getHomepage();
+   console.log("home",data)
+   setGetHome(data)
+    }
+    func()
+  }, [])
+  
 
   const bgColor = "rgb(14 9 24/var(--tw-bg-opacity,1))"
   const textColor = "white"
+   if (loading) {
+    return <FullScreenLoader />; // ✅ show loader or placeholder component
+  }
 
   return (
     <div style={{ backgroundColor: `${bgColor} `, color: textColor }}>
+      <Helmet helmetDetails={basicSettings}/>
       <>
-        <VideoCarousal pageTitle={"REAL ESTATE"} videoURL={`https://res.cloudinary.com/dextrzp2q/video/fetch/c_scale/f_auto/q_60/https://kingkong.co/wp-content/uploads/2021/05/hero-bg-video-2021.mp4`} />
+        {/* <VideoCarousal pageTitle={"REAL ESTATE"} videoURL={`https://res.cloudinary.com/dextrzp2q/video/fetch/c_scale/f_auto/q_60/https://kingkong.co/wp-content/uploads/2021/05/hero-bg-video-2021.mp4`} /> */}
+        <VideoCarousal pageTitle={"REAL ESTATE"} videoURL1={getHome?.video1} videoURL2={getHome?.video2} />
 
 
         <div className="container-fluid" style={{ marginTop: -theRef?.current?.clientHeight, }} ref={ref}>
@@ -81,7 +114,7 @@ const Home = () => {
         </div>
         <div style={{ marginTop: window.innerWidth > 768 ? (theRef?.current?.clientHeight) : (theRef?.current?.clientHeight * 0.25), backgroundColor: `${bgColor} !important` }}>
 
-          <LogoSlider direction={"left"} />
+          <LogoSlider direction={"left"} thumbnails={getHome?.thumbnails1}/>
         </div>
 
         <div className=' p-4 position-relative' >
@@ -271,7 +304,7 @@ const Home = () => {
           </div>
 
           <div className="py-5">
-            <LogoSlider />
+            <LogoSlider direction={"left"} thumbnails={getHome?.thumbnails2}/>
           </div>
         </div>
 
@@ -291,10 +324,10 @@ const Home = () => {
             <div className="d-flex justify-content-center py-5">
               <video loop autoPlay muted style={{
 
-              }} className={`card-img-top rounded-4 w-75 d-md-block d-none`} src={"https://res.cloudinary.com/dextrzp2q/video/fetch/c_scale/f_auto/q_60/https://kingkong.co/wp-content/uploads/2021/05/hero-bg-video-2021.mp4"} alt="" />
+              }} className={`card-img-top rounded-4 w-75 d-md-block d-none`} src={getHome?.video3} alt="" />
               <video loop autoPlay muted style={{
 
-              }} className={`card-img-top rounded-4 d-block d-md-none`} src={"https://res.cloudinary.com/dextrzp2q/video/fetch/c_scale/f_auto/q_60/https://kingkong.co/wp-content/uploads/2021/05/hero-bg-video-2021.mp4"} alt="" />
+              }} className={`card-img-top rounded-4 d-block d-md-none`} src={getHome?.video3} alt="" />
             </div>
             <div className="d-flex justify-content-center">
               <button className="btn btn-success w-50 d-none d-md-block rounded-3" ><span style={{ fontFamily: "Spooktackler", fontSize: 30 }}>HIT THE DAMN BUTTON</span></button>
@@ -306,14 +339,15 @@ const Home = () => {
         <div className='py-5 '>
           <div style={{ position: "relative" }}  >
 
-            <SliderVideoCarousal pageTitle={"REAL ESTATE"} videoURL={`https://res.cloudinary.com/dextrzp2q/video/fetch/c_scale/f_auto/q_60/https://kingkong.co/wp-content/uploads/2021/05/hero-bg-video-2021.mp4`} />
+            {/* <SliderVideoCarousal pageTitle={"REAL ESTATE"} videoURL={`https://res.cloudinary.com/dextrzp2q/video/fetch/c_scale/f_auto/q_60/https://kingkong.co/wp-content/uploads/2021/05/hero-bg-video-2021.mp4`} /> */}
+            <SliderVideoCarousal pageTitle={"REAL ESTATE"} videoURL={getHome?.video4} />
             <div style={{ position: "absolute", bottom: 0 }} className='h-100 w-100'>
 
               <VideoSlider />
             </div>
           </div>
         </div>
-        <BrandExperience />
+        <BrandExperience thumbnails3={getHome?.thumbnails3} thumbnails4={getHome?.thumbnails4} thumbnails5={getHome?.thumbnails5}/>
         <div className='position-relative'>
           <div className='effect-bg' style={{ zIndex: 10 }}></div>
           <Faq />

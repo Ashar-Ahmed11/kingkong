@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 
 // "https://res.cloudinary.com/dextrzp2q/image/fetch/f_webp/q_60,w_1700,h_900/https://img.freepik.com/free-vector/dark-gradient-background-with-copy-space_53876-99548.jpg"
-const VideoCarousal = ({ pageTitle, videoURL }) => {
+const VideoCarousal = ({ pageTitle, videoURL1, videoURL2 }) => {
 
     const [scale, setScale] = useState(1);
     console.log(window.scrollY);
@@ -39,7 +39,7 @@ const VideoCarousal = ({ pageTitle, videoURL }) => {
                         <div style={{ backgroundColor: "#000000", paddingBottom: window.innerWidth > 750 ? "52.941%" : "133.3%" }} class="d-block w-100 h-100 position-relative" >
 
 
-                            <video onPlay={() => setVideoLoaded(true)} loop autoPlay muted style={{ top: 0, objectFit: 'cover', height: "100%" }} className={`card-img-top position-absolute`} src={videoURL} alt="" />
+                            <video onPlay={() => setVideoLoaded(true)} loop autoPlay muted style={{ top: 0, objectFit: 'cover', height: "100%" }} className={`card-img-top position-absolute`} src={videoURL1} alt="" />
                             {/* <img style={{ transition: "1s all ease", top: 0, objectFit: 'cover', height: "100%", opacity: videoLoaded ? 0 : 1 }} className={`card-img-top position-absolute`} src={"https://res.cloudinary.com/dextrzp2q/image/fetch/f_webp/q_60/https://res.cloudinary.com/dextrzp2q/image/upload/v1738884168/dhghu9cke1tqwxnzbut4.png"} alt="" /> */}
 
 
@@ -50,7 +50,29 @@ const VideoCarousal = ({ pageTitle, videoURL }) => {
                             <h1 className='display-1 h1 p-0 m-0 proHeading' style={{ fontFamily: "Spooktackler" }} >{pageTitle}</h1>
                             <span className=' fw-normal p-0 h5'  >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Unde, natus.</span>
                             {/* <span className=' fw-normal p-0 h5'  >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Unde, natus.</span> */}
-                            
+                             <div className="mb-4 w-50 mb-5 pb-4">
+              <div className="position-relative  rounded-pill p-1 shadow-lg">
+                <div className="input-group">
+                  <input
+                    type="email"
+                    className="form-control border-0 rounded-pill ps-4 pe-5 py-3"
+                    placeholder="Enter your email..."
+                    // value={email}
+                    // onChange={(e) => setEmail(e.target.value)}
+                    style={{ paddingRight: '140px' }}
+                  />
+                  <button
+                    type="button"
+                    // onClick={handleSubmit}
+                    className="btn btn-warning position-absolute end-0 top-50 translate-middle-y me-2 rounded-pill fw-bold px-4 py-2"
+                    style={{ backgroundColor: '#c8ff00', border: 'none', zIndex: 10 }}
+                  >
+                    Doit <span className="ms-1">→</span>
+                  </button>
+                </div>
+                </div>
+              </div>
+
                             <div className="d-flex">
                                 {/* {images[counter].iconTwo&&<h1 className='display-1 mx-2' ><i class={`fa-brands ${images[counter].iconTwo} fa-2xl`}></i></h1>} */}
 
@@ -59,7 +81,7 @@ const VideoCarousal = ({ pageTitle, videoURL }) => {
                             {/* <p  style={{fontFamily:"Barranco"}}  className='display-5 pt-5'>{images[counter].offer}</p> */}
                         </div>
                     </div>
-
+                   
                 </div>
                 <div style={{ position: "absolute", width: "100%", bottom: 0 }} className=' d-flex justify-content-center align-items-center'>
                     <video loop autoPlay muted style={{
@@ -67,7 +89,8 @@ const VideoCarousal = ({ pageTitle, videoURL }) => {
                         // margin: "10vh auto", // so you have space to scroll
                         transform: `scale(${scale})`,
                         transition: "transform 0.05s linear", // smooth update
-                    }} className={`card-img-top rounded-4`} src={"https://res.cloudinary.com/dextrzp2q/video/fetch/c_scale/f_auto/q_60/https://kingkong.co/wp-content/uploads/2021/05/hero-bg-video-2021.mp4"} alt="" />
+                    // }} className={`card-img-top rounded-4`} src={"https://res.cloudinary.com/dextrzp2q/video/fetch/c_scale/f_auto/q_60/https://kingkong.co/wp-content/uploads/2021/05/hero-bg-video-2021.mp4"} alt="" />
+                    }} className={`card-img-top rounded-4`} src={videoURL2} alt="" />
                 </div>
             </div >
         </>

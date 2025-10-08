@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-export default function Footer() {
+export default function Footer({footerDetails}) {
     return (
         <div id='footer'>
             <footer class="site-footer border-light border-top">
@@ -9,7 +9,7 @@ export default function Footer() {
                         <div class="col-sm-12 col-md-6">
                             <h2 className='h6 text-light'>ABOUT</h2>
                             <p class="text-justify">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit perferendis optio beatae praesentium pariatur sed asperiores, quaerat maiores ea tempore aliquam eaque itaque nam voluptate, quod a sequi nihil soluta.
+                           {footerDetails?.footerDescription}
 
                             </p>
                         </div>
@@ -37,7 +37,8 @@ export default function Footer() {
                                     <li><a class="twitter" target='_blank' href="https://twitter.com/metatech_offic"><i class="fa fa-twitter"></i></a></li>
                                     <li><a class="linkedin" target='_blank' href="https://www.linkedin.com/company/metatech-official/"><i class="fa fa-linkedin"></i></a></li>
                                 </ul>
-                                <li><a href={`tel:mailto:contact@sft.com.pk`}>contact@kingkong.com</a></li>
+                                <li><a href={`tel:mailto:contact@sft.com.pk`}>{footerDetails?.email}</a></li>
+                                <li><a href={`tel:mailto:contact@sft.com.pk`}>{footerDetails?.phone}</a></li>
 
                             </ul>
                         </div>

@@ -4,15 +4,17 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { HashRouter as BrowserRouter } from 'react-router-dom/cjs/react-router-dom.min';
+import { HashRouter } from "react-router-dom";
+
 import AppState from './components/context/appState';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <BrowserRouter>
+  <HashRouter>
     <AppState>
       <App />
     </AppState>
-  </BrowserRouter>
+  </HashRouter>
 );
 
 // If you want to start measuring performance in your app, pass a function

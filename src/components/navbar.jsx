@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 import { Link as ScrollLink } from 'react-scroll'
 import AppContext from './context/appContext'
 import { useLocation } from 'react-router-dom/cjs/react-router-dom.min'
-const Navbar = () => {
+const Navbar = ({NavbarDetails}) => {
   const [showdesc, setshowdesc] = useState('nav-desc')
   useEffect(() => {
     const link = document.getElementsByClassName('nav-link')
@@ -36,7 +36,7 @@ const Navbar = () => {
         </div>
         <Link onClick={() => window.scrollTo({ behavior: 'smooth', top: 0, left: 0 })} className="navbar-brand text-center fw-bold" style={{ color: "white" }} to="/">
           {/* <img width={'40px'} src={NavbarLogo} alt="Metatech Official Logo" /> */}
-          KING KONG
+          {NavbarDetails?.siteName}
         </Link>
         <div>
           <a className=' d-block' onClick={() => navbarRef.current.click()} >
